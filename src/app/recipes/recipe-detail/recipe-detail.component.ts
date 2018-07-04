@@ -32,7 +32,6 @@ export class RecipeDetailComponent implements OnInit {
     for (const ingredient of this.recipe.ingredients) {
         this.shoppinglistService.addItemHandler(ingredient.name, ingredient.amount);
     }
-    this.shoppinglistService.ingredientsChanged.emit();
   }
 
 }
