@@ -27,4 +27,10 @@ export class ShopinglistService {
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
+  deleteIngredient (index: number) {
+    if (index) {
+      this.ingredients.splice(index, 1);
+      this.ingredientsChanged.next(this.ingredients.slice());
+    }
+  }
 }
