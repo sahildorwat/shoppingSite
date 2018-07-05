@@ -10,6 +10,7 @@ export class AuthService {
       error => console.log(error)
     );
   }
+
   signinUser ( email: string, password: string) {
     firebase.auth().signInWithEmailAndPassword(email, password)
             .then(
@@ -30,5 +31,14 @@ export class AuthService {
       token => this.token = token
     );
     return this.token;
+  }
+
+  logOut() {
+    firebase.auth().signOut();
+    this.token = null;
+  }
+
+  isAuthenticated() {
+    return this.token != null;
   }
 }

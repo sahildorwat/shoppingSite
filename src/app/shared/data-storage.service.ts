@@ -1,10 +1,11 @@
-import { Injectable } from "@angular/core";
-import { Http } from "@angular/http";
-import { RecipeService } from "../recipes/recipe.service";
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { RecipeService } from '../recipes/recipe.service';
 import { Response } from '@angular/http';
 import 'rxjs/Rx';
-import { Recipe } from '../recipes/recipe.model'
-import { AuthService } from "../auth/auth.service";
+import { Recipe } from '../recipes/recipe.model';
+import { AuthService } from '../auth/auth.service';
+
 @Injectable()
 export class DataStorageService {
 
