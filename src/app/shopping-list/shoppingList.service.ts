@@ -17,6 +17,14 @@ export class ShopinglistService {
     this.ingredients.push(new Ingredient(name, amount) );
     this.ingredientsChanged.next(this.ingredients.slice(0));
   }
+  getEditingIngredient(index: number) {
+    return this.ingredients[index];
+  }
 
+  updateItemHandler(index: number, ingredient: Ingredient) {
+    console.log('in update item', ingredient);
+    this.ingredients[index] = ingredient;
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
 
 }
