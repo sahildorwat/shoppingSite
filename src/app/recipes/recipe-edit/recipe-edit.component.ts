@@ -59,8 +59,6 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSubmit() {
-
-    console.log('in on submit');
     const newRecipe = new Recipe(
       this.recipeForm.value['name'],
       this.recipeForm.value['description'],
@@ -76,10 +74,12 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onAddIngredient() {
-    console.log('in add Ingredients');
     (<FormArray>this.recipeForm.get('recipeIngredient')).push( new FormGroup({
       name: new FormControl(null, Validators.required),
       amount: new FormControl(null, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
     }));
+  }
+  onIngredientDelete(index: number) {
+    (<FormArray>this.recipeForm.get('recipeIngredient')).removeAt(index);
   }
 }
